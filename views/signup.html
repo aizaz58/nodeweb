@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="images/favicon.ico"/>	  
+  </head>
+  <body>
+  <div class="container-fluid"/>
+    <div class="container"/>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="index.html"><img src="images/logo.png" width="130" height="60" alt=""/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"> <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"> <a class="nav-link" href="about.html">About Us&nbsp;</a></li>
+            <li class="nav-item"> <a class="nav-link" href="signup.html">Sign up</a></li>
+            <li class="nav-item"> <a class="nav-link" href="login.html">Login&nbsp;</a></li>
+            <li class="nav-item"> <a class="nav-link" href="jewelleries.html">Our Jewelleries</a></li>
+            <li class="nav-item"> <a class="nav-link" href="cart.html">View Cart</a></li>
+            <li class="nav-item"> <a class="nav-link" href="checkout.html">Checkout</a></li>
+            <li class="nav-item"> <a class="nav-link" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+<h1 class="text-center">Register Here</h1>
+
+<center>
+		<section class="form-section">
+            <div class="form-container">
+     <h3>Register Here</h3>
+		
+      <form action="" method="post"> 
+        <table>
+          <div> NAME:
+		       <input type="text" name="Username" placeholder="USERNAME" required>
+		       <br>
+		       <br>
+		       <br>
+		       EMAIL:
+		       <input type="email" name="mail" placeholder="EMAIL" required>
+		       <br>
+		       <br>
+		       <br>
+		       PASSWORD:
+		       <input type="password" name="user_pass" placeholder="PASSWORD" required>
+		       <br>
+		       <br>
+		       <br>
+		       PHONE NUMBER:
+		       <input type="phone" name="mob_digits" placeholder="05********" maxlength="9" required>
+		       <select name="select">
+		         <option>+971</option>
+		         <option>+973</option>
+		         <option>+974</option>
+		         <option>+965</option>
+		         <option>+966</option>
+		         <option>+968</option>
+		         <option>+001</option>
+	           </select>
+		       <br>
+		       <br>
+		       <br>
+				
+		       <p>already a Memeber?<a href="login.html">Login</a></p>
+		       <button class="submit-btn" onclick="Register" ><a href="thankyou.html" style="color: black; font-size: 20px;"> Register </a></button>
+   
+          </div>
+        </table>
+      </form>
+    
+            </div>
+        </section>
+        
+			
+      <div id="message">
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        </div>
+    </center>
+  <script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+}
+
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+<br>
+      <br>
+<br>
+    </div>
+  </div>
+  <!-- body code goes here -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  </body>
+</html>

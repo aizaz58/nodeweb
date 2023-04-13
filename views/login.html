@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="images/favicon.ico"/>	  
+  </head>
+  <body>
+  <div class="container-fluid"/>
+    <div class="container"/>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="index.html"><img src="images/logo.png" width="130" height="60" alt=""/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"> <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"> <a class="nav-link" href="about.html">About Us&nbsp;</a></li>
+            <li class="nav-item"> <a class="nav-link" href="signup.html">Sign up</a></li>
+            <li class="nav-item"> <a class="nav-link" href="login.html">Login&nbsp;</a></li>
+            <li class="nav-item"> <a class="nav-link" href="jewelleries.html">Our Jewelleries</a></li>
+            <li class="nav-item"> <a class="nav-link" href="cart.html">View Cart</a></li>
+            <li class="nav-item"> <a class="nav-link" href="checkout.html">Checkout</a></li>
+            <li class="nav-item"> <a class="nav-link" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+<h1 class="text-center">Register Here</h1>
+
+<center>
+		<section class="form-section">
+            <div class="form-container">
+	  
+    <h3>Login Here</h3>
+    <form action="" method="post"> 
+        <table>
+        <tr><td  style="color: black" USERNAME>
+			</td>
+            <td><input type="text" name="Username" placeholder="USERNAME" required></td></tr>
+			<br>
+		    <br>
+		    <br>
+			<tr><td style="color: black" PASSWORD> 
+            <td>
+		    <br>
+		    <br><input type="password" name="psw" placeholder="PASSWORD" required>
+			<br>
+		       <br>
+		       <br>	
+				</td>
+            </td></tr>
+        </table>
+        </form>
+				
+		  <p>Not yet a Memeber?<a href="signup.html">Register</a></p>
+		       <button class="submit-btn"   style="color: black; font-size: 20px" > login </a></button>
+   
+			
+            </div></section>
+      </center>
+      
+	  
+	  
+	  
+    <script>
+      var attempt = 3; // Variable to count number of attempts.
+        // Below function Executes on click of login button.
+      async  function validate(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+var btn=document.querySelector(".submit-btn")
+btn.addEventListener("click",async()=>{
+
+
+
+
+  
+  let user = {
+  name: 'John',
+  surname: 'Smith'
+};
+
+let response = await fetch('/login.html', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json;charset=utf-8'
+  },
+  body: JSON.stringify(user),
+  
+})
+
+
+
+}).then(res=>res.json()).then(json=>console.log(json))
+
+
+
+
+if ( username == "formget" && password == "formget#123"){
+                alert ("Login successfully");
+              //  window.location = "success.html"; // Redirecting to other page.
+               }
+            else{
+                attempt --;// Decrementing by one.
+                alert("You have left "+attempt+" attempt;");
+                // Disabling fields after 3 attempts.
+                if( attempt == 0){
+                    document.getElementById("username").disabled = true;
+                    document.getElementById("password").disabled = true;
+                    document.getElementById("submit").disabled = true;
+                    return false;}
+            }
+        }
+    </script>
+  </body>
+</html>
